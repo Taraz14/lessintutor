@@ -54,6 +54,11 @@
                         </div>
                         <!-- /.col -->
                     </div>
+                    <br />
+                    <div class="col-6">
+                        <a href="<?= site_url() ?>" class="">
+                            < Kembali ke Home</a>
+                    </div>
                 </form>
             </div>
             <!-- /.card-body -->

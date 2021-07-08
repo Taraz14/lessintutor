@@ -51,10 +51,47 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 
+//homepage
+$route['home'] = 'home/loged_in';
+/**
+ * SD
+ */
+$route['sd'] = 'home/Sd';
+$route['sd/mapel/(:any)'] = 'home/Sd/mapel/$1';
+$route['sd/bing'] = 'home/Sd/bing';
+$route['sd/ipa'] = 'home/Sd/ipa';
+$route['sd/mandarin'] = 'home/Sd/mandarin';
+$route['sd/mtk'] = 'home/Sd/mtk';
+
+/**
+ * SMP
+ */
+$route['smp'] = 'home/Smp';
+$route['smp/mapel/(:any)'] = 'home/Smp/mapel/$1';
+
+$route['smp/bing'] = 'home/Smp/bing';
+$route['smp/ipa'] = 'home/Smp/ipa';
+$route['smp/mandarin'] = 'home/Smp/mandarin';
+$route['smp/mtk'] = 'home/Smp/mtk';
+
+/**
+ * SMA
+ */
+$route['sma'] = 'home/Sma';
+$route['sma/mapel/(:any)'] = 'home/Sma/mapel/$1';
+
+$route['sma/bing'] = 'home/Sma/bing';
+$route['sma/biologi'] = 'home/Sma/biologi';
+$route['sma/fisika'] = 'home/Sma/fisika';
+$route['sma/kimia'] = 'home/Sma/kimia';
+$route['sma/mtk'] = 'home/Sma/mtk';
+
+
 //auth
 $route['login'] = 'auth/auth';
 $route['registrasi'] = 'auth/auth/registrasi';
 $route['logout'] = 'auth/auth/logout';
+$route['9/logout'] = 'auth/auth/logoutHome';
 
 //profile
 $route['profile'] = 'profile';
@@ -69,6 +106,8 @@ $route['0/hapus/siswa/(:any)'] = 'admin/siswa/hapus/$1';
 $route['0/siswa'] = 'admin/siswa';
 $route['0/pembayaran'] = 'admin/pembayaran';
 $route['0/refund'] = 'admin/pembayaran/refund';
+$route['0/manage'] = 'admin/KelasManage';
+$route['0/mapel'] = 'admin/KelasManage/mapel';
 
 //pengajar
 $route['1/konfirmasi'] = 'pengajar/dashboard';

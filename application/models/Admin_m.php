@@ -111,6 +111,42 @@ class Admin_m extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('user');
     }
+
+    public function getTingkatan()
+    {
+        return $this->db->get('tingkatan')->result();
+    }
+
+    public function getMapelTrigger($id_tingkatan)
+    {
+        // $this->db->join('tingkatan', 'mapel.id_tingkatan = tingkatan.id', 'left');
+        return $this->db->get_where('mapel', ['id_tingkatan' => $id_tingkatan])->result();
+    }
+
+    public function getAllPengajar()
+    {
+        return $this->db->get_where('user', ['role' => 88])->result();
+    }
+
+    public function getMapel()
+    {
+        $this->db->join('tingkatan', 'mapel.id_tingkatan = tingkatan.id', 'left');
+        return $this->db->get('mapel')->result();
+    }
+
+    public function saveKelasAjar($data)
+    {
+        return $this->db->insert('pengajar', $data);
+    }
+
+    public function getKelasPengajar()
+    {
+        $this->db->join('user', 'pengajar.id_user = user.id');
+        $this->db->join('mapel', 'pengajar.id_mapel = mapel.id_mapel', 'inner');
+        $this->db->join('tingkatan', 'mapel.id_tingkatan = tingkatan.id', 'inner');
+        return $this->db->get('pengajar')->result();
+    }
+
 }
 
 /* End of file Admin_m.php */

@@ -57,6 +57,22 @@
                               </li>
                           </ul>
                       </li>
+                      <li class="nav-item">
+                          <a href="<?= site_url('0/mapel') ?>" class="nav-link <?= $this->uri->segment(1) == 'mapel' ? 'active' : '' ?>">
+                              <i class="nav-icon fas fa-book-open"></i>
+                              <p>
+                                  Mata Pelajaran
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="<?= site_url('0/manage') ?>" class="nav-link <?= $this->uri->segment(1) == 'manage' ? 'active' : '' ?>">
+                              <i class="nav-icon fas fa-universal-access"></i>
+                              <p>
+                                  Management Kelas Pengajar
+                              </p>
+                          </a>
+                      </li>
                       <li class="nav-header">Verifikasi Data Transaksi</li>
                       <li class="nav-item">
                           <a href="#" class="nav-link">

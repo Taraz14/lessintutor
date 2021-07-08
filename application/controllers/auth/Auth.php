@@ -26,7 +26,7 @@ class Auth extends CI_Controller
             } else if ($this->session->userdata('role') == 88) {
                 redirect('1/konfirmasi');
             } else if ($this->session->userdata('role') == 77) {
-                redirect('2/pengajar');
+                redirect('home');
             }
         } else {
             $this->session->set_flashdata('failed', '<div class="alert alert-danger alert-dismissible" role="alert">
@@ -81,6 +81,16 @@ class Auth extends CI_Controller
         $this->session->unset_userdata($var);
         $this->session->sess_destroy();
         redirect('login');
+    }
+
+    public function logoutHome()
+    {
+        $var = [
+            'username' => ''
+        ];
+        $this->session->unset_userdata($var);
+        $this->session->sess_destroy();
+        redirect('');
     }
 }
 
