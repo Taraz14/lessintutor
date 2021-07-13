@@ -11,11 +11,10 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
+                            <th>Aksi</th>
+                            <th>Atas Nama</th>
+                            <th>Mata Pelajaran</th>
+                            <th>Status Pembayaran</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,10 +31,18 @@
     window.onload = () => {
         $(function() {
             $("#example1").DataTable({
+                "processing": true,
+                "serverSide": true,
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                "order": [],
+
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                "ajax": {
+                    url: "<?= site_url('pengajar/Dashboard/getPembayaran') ?>",
+                    'responsive': true
+                },
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
     }

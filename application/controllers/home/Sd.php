@@ -40,8 +40,13 @@ class Sd extends CI_Controller
 
     public function getKontrak()
     {
-        $input = $this->input->post();
-        var_dump($input);
+        if ($this->session->userdata('logged_in') == TRUE) {
+            $input = $this->input->post();
+            $this->db->insert('pembayaran', $input);
+            redirect('2/pengajar');
+        } else {
+            redirect('login');
+        }
     }
 }
 

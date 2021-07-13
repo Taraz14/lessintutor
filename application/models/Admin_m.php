@@ -146,7 +146,6 @@ class Admin_m extends CI_Model
         $this->db->join('tingkatan', 'mapel.id_tingkatan = tingkatan.id', 'inner');
         return $this->db->get('pengajar')->result();
     }
-
 }
 
 /* End of file Admin_m.php */

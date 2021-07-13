@@ -1,7 +1,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="<?= site_url() ?>" class="brand-link">
+      <a href="<?= site_url('home') ?>" class="brand-link">
           <img src="<?= base_url() ?>assets/dist/img/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">Lessin Tutor</span>
       </a>
@@ -161,6 +161,15 @@
                               <i class="nav-icon fas fa-user"></i>
                               <p>
                                   Profile
+                              </p>
+                          </a>
+                      </li>
+                      <li class="nav-header">Pament</li>
+                      <li class="nav-item">
+                          <a href="<?= site_url('2/pengajar') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengajar' ? 'active' : '' ?>">
+                              <i class="nav-icon fas fa-user-check"></i>
+                              <p>
+                                  Status bayar Kontrak
                               </p>
                           </a>
                       </li>

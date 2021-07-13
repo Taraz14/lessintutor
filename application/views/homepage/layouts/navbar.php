@@ -1,14 +1,25 @@
 <section class="menu menu2 cid-sAQnV185uk" once="menu" id="menu2-11">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
-                    <a href="<?= site_url() ?>">
-                        <img src="<?= base_url() ?>assets/home/images/screenshot-3-removebg-preview.png" alt="Mobirise" style="height: 8rem;">
-                    </a>
-                </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="<?= site_url() ?>">LESSIN TUTOR</a></span>
-            </div>
+            <?php if ($this->session->userdata('logged_in') == TRUE) { ?>
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="<?= site_url() ?>">
+                            <img src="<?= base_url() ?>assets/home/images/screenshot-3-removebg-preview.png" alt="Mobirise" style="height: 8rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="<?= site_url('home') ?>">LESSIN TUTOR</a></span>
+                </div>
+            <?php } else { ?>
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="<?= site_url() ?>">
+                            <img src="<?= base_url() ?>assets/home/images/screenshot-3-removebg-preview.png" alt="Mobirise" style="height: 8rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="<?= site_url('home') ?>">LESSIN TUTOR</a></span>
+                </div>
+            <?php } ?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
                     <span></span>
@@ -34,7 +45,7 @@
 
                     <?php if ($this->session->userdata('logged_in')) { ?>
                         <li class="nav-item" style="background-color: palegoldenrod;">
-                            <a class="nav-link link text-black text-primary display-4" href="<?= site_url('9/logout') ?>"><?= $profile->username ?></a>
+                            <a class="nav-link link text-black text-primary display-4" href="<?= site_url('2/pengajar') ?>"><?= $profile->username ?></a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item" style="background-color: palegoldenrod;">
